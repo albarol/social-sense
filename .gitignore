@@ -1,0 +1,23 @@
+#################
+## Visual Studio
+#################
+
+bin/
+obj/
+_ReSharper.*
+*.suo
+_ReSharper.*/
+.DS_Store
+._.DS_Store
+*.dotCover
+build/
+TestResult.xml
+*.user
+*.pdb
+*/*.ncrunchsolution*
+src/GlobalInfo.cs
+._*
+*.ncrunchproject
+*.cache
+NDependOut/
+*.ndproj
