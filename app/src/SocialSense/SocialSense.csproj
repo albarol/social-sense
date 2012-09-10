@@ -40,15 +40,73 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Engines\Configurations\BingEngineConfiguration.cs" />
+    <Compile Include="Engines\Configurations\DiggEngineConfiguration.cs" />
+    <Compile Include="Engines\Configurations\FacebookEngineConfiguration.cs" />
+    <Compile Include="Engines\Configurations\GoogleEngineConfiguration.cs" />
+    <Compile Include="Engines\Configurations\GoogleNewsEngineConfiguration.cs" />
+    <Compile Include="Engines\Configurations\GooglePlusEngineConfiguration.cs" />
+    <Compile Include="Engines\Configurations\TwitterEngineConfiguration.cs" />
+    <Compile Include="Engines\Configurations\YahooEngineConfiguration.cs" />
+    <Compile Include="Engines\Engine.cs" />
+    <Compile Include="Engines\IEngineConfiguration.cs" />
+    <Compile Include="Parsers\BingParser.cs" />
+    <Compile Include="Parsers\DiggParser.cs" />
+    <Compile Include="Parsers\FacebookParser.cs" />
+    <Compile Include="Parsers\GoogleNewsParser.cs" />
+    <Compile Include="Parsers\GooglePlusParser.cs" />
+    <Compile Include="Parsers\GoogleSitesParser.cs" />
+    <Compile Include="Parsers\HtmlParser.cs" />
+    <Compile Include="Parsers\IParser.cs" />
+    <Compile Include="Parsers\Mapping\DiggMap.cs" />
+    <Compile Include="Parsers\Mapping\FacebookMap.cs" />
+    <Compile Include="Parsers\Mapping\GooglePlus.cs" />
+    <Compile Include="Parsers\Mapping\TwitterMap.cs" />
+    <Compile Include="Parsers\TwitterParser.cs" />
+    <Compile Include="Parsers\YahooParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shared\Country.cs" />
+    <Compile Include="Shared\DateParser.cs" />
+    <Compile Include="Shared\GoogleSource.cs" />
+    <Compile Include="Shared\Language.cs" />
+    <Compile Include="Shared\Period.cs" />
+    <Compile Include="Shared\Query.cs" />
+    <Compile Include="Shared\ResultItem.cs" />
+    <Compile Include="Shared\SearchResult.cs" />
+    <Compile Include="Spiders\Behaviors\Behavior.cs" />
+    <Compile Include="Spiders\Behaviors\CookieBehavior.cs" />
+    <Compile Include="Spiders\Behaviors\DelayBehavior.cs" />
+    <Compile Include="Spiders\Behaviors\GoogleUserAgentBehavior.cs" />
+    <Compile Include="Spiders\Behaviors\RandomDelayBehavior.cs" />
+    <Compile Include="Spiders\Behaviors\RandomUserAgentBehavior.cs" />
+    <Compile Include="Spiders\ISpider.cs" />
+    <Compile Include="Spiders\Spider.cs" />
+    <Compile Include="Spiders\SynchronizedSpider.cs" />
+    <Compile Include="UrlBuilders\BingUrlBuilder.cs" />
+    <Compile Include="UrlBuilders\DiggUrlBuilder.cs" />
+    <Compile Include="UrlBuilders\FacebookUrlBuilder.cs" />
+    <Compile Include="UrlBuilders\GoogleApiUrlBuilder.cs" />
+    <Compile Include="UrlBuilders\GooglePlusUrlBuilder.cs" />
+    <Compile Include="UrlBuilders\GoogleUrlBuilder.cs" />
+    <Compile Include="UrlBuilders\IUrlBuilder.cs" />
+    <Compile Include="UrlBuilders\Parameters\BingLocation.cs" />
+    <Compile Include="UrlBuilders\Parameters\FacebookLocation.cs" />
+    <Compile Include="UrlBuilders\Parameters\GoogleLocation.cs" />
+    <Compile Include="UrlBuilders\Parameters\GooglePlusLocation.cs" />
+    <Compile Include="UrlBuilders\Parameters\ILocation.cs" />
+    <Compile Include="UrlBuilders\Parameters\TwitterLocation.cs" />
+    <Compile Include="UrlBuilders\Parameters\YahooLocation.cs" />
+    <Compile Include="UrlBuilders\TwitterUrlBuilder.cs" />
+    <Compile Include="UrlBuilders\YahooUrlBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

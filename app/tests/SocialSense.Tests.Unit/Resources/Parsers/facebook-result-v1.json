@@ -1,0 +1,48 @@
+
+/**/ display({
+   "data": [
+      {
+         "id": "666798905_10150613418558906",
+         "from": {
+            "name": "Yesim Gurleyen",
+            "id": "666798905"
+         },
+         "message": "Uzuuunnn bi sure pepsi gormek istemiyorum!",
+         "type": "status",
+         "application": {
+            "name": "Mobile",
+            "id": "186529194704290"
+         },
+         "created_time": "2011-12-15T16:02:52+0000",
+         "updated_time": "2011-12-15T18:26:49+0000",
+         "likes": {
+            "data": [
+               {
+                  "name": "Bora \u00fcrgen\u00e7",
+                  "id": "711464789"
+               },
+               {
+                  "name": "Yasemin G\u00fcrleyen",
+                  "id": "665783863"
+               }
+            ],
+            "count": 2
+         }
+      },
+      {
+         "id": "1126347621_2757875102497",
+         "from": {
+            "name": "Danielle Burris",
+            "id": "1126347621"
+         },
+         "message": "I have reached the pivotal moment in my day where I decide to continue with coffee or move on to diet pepsi.... hmmm ... desicions, desicions",
+         "type": "status",
+         "created_time": "2011-12-15T15:55:17+0000",
+         "updated_time": "2011-12-15T17:37:01+0000"
+      }
+   ],
+   "paging": {
+      "previous": "http://graph.facebook.com/search?type=post&metadata=1&callback=display&q=pepsi&limit=25&since=1323977790&__previous=1",
+      "next": "http://graph.facebook.com/search?type=post&metadata=1&callback=display&q=pepsi&limit=25&until=1323964516"
+   }
+});

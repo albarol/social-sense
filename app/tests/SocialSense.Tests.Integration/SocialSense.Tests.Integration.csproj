@@ -46,11 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Engines\BingEngineFixture.cs" />
+    <Compile Include="Engines\DiggEngineFixture.cs" />
+    <Compile Include="Engines\FacebookEngineFixture.cs" />
+    <Compile Include="Engines\GoogleNewsEngineFixture.cs" />
+    <Compile Include="Engines\GooglePlusEngineFixture.cs" />
+    <Compile Include="Engines\GoogleSiteEngineFixture.cs" />
+    <Compile Include="Engines\TwitterEngineFixture.cs" />
+    <Compile Include="Engines\YahooEngineFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\SocialSense\SocialSense.csproj">
+      <Project>{46CD5A66-1BB2-46EC-9F78-9C64464F52B8}</Project>
+      <Name>SocialSense</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

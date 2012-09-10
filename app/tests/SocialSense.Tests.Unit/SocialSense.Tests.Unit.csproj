@@ -46,15 +46,76 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Engines\EngineFixture.cs" />
+    <Compile Include="Helpers\IoHelper.cs" />
+    <Compile Include="Parsers\BingParserFixture.cs" />
+    <Compile Include="Parsers\DiggParserFixture.cs" />
+    <Compile Include="Parsers\FacebookParserFixture.cs" />
+    <Compile Include="Parsers\GoogleNewsParserFixture.cs" />
+    <Compile Include="Parsers\GooglePlusParserFixture.cs" />
+    <Compile Include="Parsers\GoogleSitesParserFixture.cs" />
+    <Compile Include="Parsers\TwitterParserFixture.cs" />
+    <Compile Include="Parsers\YahooParserFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Spiders\BasicSpiderFixture.cs" />
+    <Compile Include="Spiders\CookiedSpiderFixture.cs" />
+    <Compile Include="Spiders\DelayedSpiderFixture.cs" />
+    <Compile Include="Spiders\RandomDelayedSpiderFixture.cs" />
+    <Compile Include="Spiders\SpiderFixture.cs" />
+    <Compile Include="Spiders\SynchronizedSpiderFixture.cs" />
+    <Compile Include="Urls\BingUrlBuilderFixture.cs" />
+    <Compile Include="Urls\DiggUrlBuilderFixture.cs" />
+    <Compile Include="Urls\FacebookUrlBuilderFixture.cs" />
+    <Compile Include="Urls\GoogleBlogsUrlBuilderFixture.cs" />
+    <Compile Include="Urls\GoogleNewsUrlBuilderFixture.cs" />
+    <Compile Include="Urls\GooglePlusUrlBuilderFixture.cs" />
+    <Compile Include="Urls\GoogleSiteUrlBuilderFixture.cs" />
+    <Compile Include="Urls\TwitterUrlBuilderFixture.cs" />
+    <Compile Include="Urls\YahooUrlBuilderFixture.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Resources\Parsers\facebook-result-v1.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Parsers\google-plus-v1.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Parsers\twitter-result-v1.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Parsers\BingResult-v1.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Parsers\BingResult-v2.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Parsers\DiggResult-v1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Parsers\GoogleNews-v1.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Parsers\GoogleResult-v1.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Parsers\YahooResult-v1.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\SocialSense\SocialSense.csproj">
+      <Project>{46CD5A66-1BB2-46EC-9F78-9C64464F52B8}</Project>
+      <Name>SocialSense</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

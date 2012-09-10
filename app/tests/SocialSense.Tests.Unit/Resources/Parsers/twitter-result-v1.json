@@ -1,0 +1,15 @@
+﻿{
+	"completed_in":0.127,
+	"max_id":147731938323603456,
+	"max_id_str":"147731938323603456",
+	"next_page":"?page=2&max_id=147731938323603456&q=pepsi&rpp=100",
+	"page":1,
+	"query":"pepsi",
+	"refresh_url":"?since_id=147731938323603456&q=pepsi",
+	"results":[
+		{"created_at":"Fri, 16 Dec 2011 14:42:12 +0000","from_user":"loshermanos2012","from_user_id":175139231,"from_user_id_str":"175139231","from_user_name":"Los Hermanos ","geo":null,"id":147687977370402816,"id_str":"147687977370402816","iso_language_code":"pt","metadata":{"recent_retweets":3,"result_type":"popular"},"profile_image_url":"http://a3.twimg.com/profile_images/1640257845/somente_caricaturas_normal.png","profile_image_url_https":"https://si0.twimg.com/profile_images/1640257845/somente_caricaturas_normal.png","source":"&lt;a href=&quot;http://twitter.com/&quot;&gt;web&lt;/a&gt;","text":"Los Hermanos em Porto Alegre! Dia 12 de maio no Pepsi On Stage. Informa\u00E7\u00F5es em http://t.co/FkRRIPDR","to_user":null,"to_user_id":null,"to_user_id_str":null,"to_user_name":null}
+	],
+	"results_per_page":100,
+	"since_id":0,
+	"since_id_str":"0"
+}
