@@ -10,7 +10,7 @@ _ReSharper.*/
 .DS_Store
 ._.DS_Store
 *.dotCover
-build/
+deploy/
 TestResult.xml
 *.user
 *.pdb
@@ -21,3 +21,5 @@ src/GlobalInfo.cs
 *.cache
 NDependOut/
 *.ndproj
+*.DotSettings
+*.StyleCop
