@@ -54,6 +54,7 @@
     <Compile Include="Engines\Configurations\YahooEngineConfiguration.cs" />
     <Compile Include="Engines\Engine.cs" />
     <Compile Include="Engines\IEngineConfiguration.cs" />
+    <Compile Include="Extensions\EngineFactory.cs" />
     <Compile Include="Parsers\BingParser.cs" />
     <Compile Include="Parsers\DiggParser.cs" />
     <Compile Include="Parsers\FacebookParser.cs" />

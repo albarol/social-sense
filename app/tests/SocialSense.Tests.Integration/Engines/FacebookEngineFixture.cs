@@ -5,7 +5,7 @@
     using SharpTestsEx;
 
     using SocialSense.Engines;
-    using SocialSense.Engines.Configurations;
+    using SocialSense.Extensions;
     using SocialSense.Shared;
 
     [TestFixture, Category("Engines")]
@@ -16,7 +16,7 @@
         [SetUp]
         public void SetUp()
         {
-            this.engine = new Engine(new FacebookEngineConfiguration());
+            this.engine = EngineFactory.Facebook();
         }
 
         [TestCase("cultura")]
