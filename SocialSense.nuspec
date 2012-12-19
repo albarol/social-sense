@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+    <metadata>
+        <id>SocialSense</id>
+        <version>1.0</version>    
+        <description>Crawler to main social networks</description>
+        <licenseUrl>https://github.com/fakeezz/social-sense/blob/master/LICENSE.txt</licenseUrl>
+        <authors>Alexandre Barbieri</authors>
+        <owners>Alexandre Barbieri</owners>
+        <language>en-US</language>
+        <projectUrl>https://github.com/fakeezz/social-sense</projectUrl>
+        <tags>SOCIAL CRAWLER</tags>
+        <dependencies>
+            <dependency id="HtmlAgilityPack" version="1.4.6" />
+            <dependency id="Newtonsoft.Json" version="4.5.9" />
+        </dependencies>
+    </metadata>
+</package>
