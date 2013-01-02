@@ -1,4 +1,4 @@
-# Socialsense - Crawler to main social networks   
+# Socialsense - Crawler for main social networks   
 
 Author: Alexandre Barbieri (fakeezz)
 

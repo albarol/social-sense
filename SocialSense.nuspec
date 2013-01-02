@@ -3,13 +3,13 @@
     <metadata>
         <id>SocialSense</id>
         <version>1.0</version>    
-        <description>Crawler to main social networks</description>
+        <description>This project is a crawler for main social networks</description>
         <licenseUrl>https://github.com/fakeezz/social-sense/blob/master/LICENSE.txt</licenseUrl>
-        <authors>Alexandre Barbieri</authors>
-        <owners>Alexandre Barbieri</owners>
+        <authors>fakeezz</authors>
+        <owners>fakeezz</owners>
         <language>en-US</language>
         <projectUrl>https://github.com/fakeezz/social-sense</projectUrl>
-        <tags>SOCIAL CRAWLER</tags>
+        <tags>social crawler</tags>
         <dependencies>
             <dependency id="HtmlAgilityPack" version="1.4.6" />
             <dependency id="Newtonsoft.Json" version="4.5.9" />
