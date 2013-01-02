@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+    <metadata>
+        <id>SocialSense</id>
+        <version>1.1</version>    
+        <description>Crawler for main social networks</description>
+        <licenseUrl>https://github.com/fakeezz/social-sense/blob/master/LICENSE.txt</licenseUrl>
+        <authors>fakeezz</authors>
+        <owners>fakeezz</owners>
+        <language>en-US</language>
+        <projectUrl>https://github.com/fakeezz/social-sense</projectUrl>
+        <tags>social crawler twitter facebook google+ blog</tags>
+        <dependencies>
+            <dependency id="HtmlAgilityPack" version="1.4.6" />
+            <dependency id="Newtonsoft.Json" version="4.5.9" />
+        </dependencies>
+	<releaseNotes>
+		<![CDATA[
+			For full release notes see https://github.com/fakeezz/social-sense/blob/master/RELEASE.md
+		]]>
+	</releaseNotes>
+    </metadata>
+</package>
