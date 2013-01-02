@@ -30,7 +30,6 @@
             get
             {
                 var spider = new Spider();
-                spider.AddBehavior(new RandomDelayBehavior(2, 6));
                 spider.AddBehavior(new GoogleUserAgentBehavior());
                 return spider;
             }
