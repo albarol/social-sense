@@ -33,33 +33,42 @@
 
             foreach (var node in parentNode.ChildNodes.Where(l => l.FirstChild.Name == "div"))
             {
-                var result = new ResultItem
+                try
                 {
-                    Url = this.ExtractUrl(node),
-                    Date = this.ExtractDate(node),
-                    Snippet = this.ExtractSnippet(node),
-                    Title = this.ExtractTitle(node),
-                    Author = this.ExtractAuthor(node)
-                };
-                results.Add(result);
+                    var result = new ResultItem
+                    {
+                        Url = this.ExtractUrl(node),
+                        Date = this.ExtractDate(node),
+                        Snippet = this.ExtractSnippet(node),
+                        Title = this.ExtractTitle(node),
+                        Author = this.ExtractAuthor(node)
+                    };
+                    results.Add(result);
+                }
+                catch (Exception e)
+                {
+                    throw new ParserException(e.Message) { Source = e.Source };
+                }
             }
-
             return new SearchResult { Items = results, HasNextPage = this.hasNextPage };
         }
 
         protected override string ExtractUrl(HtmlNode node)
         {
-            return node.SelectSingleNode("div[1]/div[1]/h3/a").Attributes["href"].Value;
+            var htmlNode = node.SelectSingleNode("div[1]/div[1]/div[1]/h3/a");
+            return (htmlNode != null) ? htmlNode.Attributes["href"].Value : string.Empty;
         }
 
         protected override string ExtractTitle(HtmlNode node)
         {
-            return node.SelectSingleNode("div[1]/div[1]/h3").InnerText;
+            var htmlNode = node.SelectSingleNode("div[1]/div[1]/div[1]/h3");
+            return (htmlNode != null) ? htmlNode.InnerText : string.Empty;
         }
 
         protected override string ExtractSnippet(HtmlNode node)
         {
-            return node.SelectSingleNode("div[1]/p").InnerText;
+            var htmlNode = node.SelectSingleNode("div[1]/div[1]/p");
+            return (htmlNode != null) ? htmlNode.InnerText : string.Empty;
         }
 
         protected override DateTime ExtractDate(HtmlNode node)

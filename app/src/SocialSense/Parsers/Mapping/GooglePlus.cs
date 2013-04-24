@@ -65,6 +65,11 @@
                     return this.content;
                 }
 
+                if (this.Attachments == null)
+                {
+                    return this.content;
+                }
+                
                 string attachmentContent = string.Empty;
 
                 foreach (var attachment in this.Attachments)
