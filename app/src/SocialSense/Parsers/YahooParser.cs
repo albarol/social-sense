@@ -43,7 +43,6 @@
                         Title = this.ExtractTitle(node),
                         Author = this.ExtractAuthor(node)
                     };
-
                     results.Add(result);
                 }
             }
@@ -53,9 +52,14 @@
 
         protected override string ExtractUrl(HtmlNode node)
         {
+            if (node.SelectSingleNode("div/div[1]/h3/a") == null)
+            {
+                return string.Empty;
+            }
+            
             const int PartWithUrl = 2;
 
-            var dirtyUrl = HttpUtility.HtmlDecode(node.SelectSingleNode("div/div/div/a").Attributes["href"].Value).Split('*');
+            var dirtyUrl = HttpUtility.HtmlDecode(node.SelectSingleNode("div/div[1]/h3/a").Attributes["href"].Value).Split('*');
 
             if (dirtyUrl.Length > PartWithUrl && dirtyUrl[PartWithUrl] != null)
             {
@@ -67,19 +71,29 @@
 
         protected override string ExtractTitle(HtmlNode node)
         {
-            return node.SelectSingleNode("div/div/div/a").InnerText;
+            if (node.SelectSingleNode("div/div[1]/h3/a") != null)
+            {
+                return node.SelectSingleNode("div/div[1]/h3/a").InnerText;
+            }
+
+            return string.Empty;
         }
 
         protected override string ExtractSnippet(HtmlNode node)
         {
-            return node.SelectSingleNode("div/div/div/div[1]").InnerText;
+            if (node.SelectSingleNode("div/div[2]") != null)
+            {
+                return node.SelectSingleNode("div/div[2]").InnerText;
+            }
+
+            return string.Empty;
         }
 
         protected override DateTime ExtractDate(HtmlNode node)
         {
             try
             {
-                var dateOfResult = node.SelectSingleNode("div/div/div/div[2]").InnerText.Split('-')[1];
+                var dateOfResult = node.SelectSingleNode("div/div[2]/div/div/span").InnerText.Split('-')[1];
                 return DateTime.Parse(dateOfResult);
             }
             catch
@@ -90,7 +104,12 @@
 
         protected override string ExtractAuthor(HtmlNode node)
         {
-            return node.SelectSingleNode("div/div/div/div[2]").InnerText.Split('-')[0].Trim();
+            if (node.SelectSingleNode("div/div[2]/div/div/span") != null)
+            {
+                return node.SelectSingleNode("div/div[2]/div/div/span").InnerText.Split('-')[0].Trim();    
+            }
+
+            return string.Empty;
         }
 
         private bool HasNextPage(string content)
@@ -100,8 +119,9 @@
 
         private bool IsValidNode(HtmlNode node)
         {
-            return node.SelectSingleNode("div/div/div").Attributes["class"] != null &&
-                   node.SelectSingleNode("div/div/div").Attributes["class"].Value.Contains("news_text");
+            return node.SelectSingleNode("div") != null &&
+                   node.SelectSingleNode("div").Attributes["class"] != null &&
+                   node.SelectSingleNode("div").Attributes["class"].Value.Contains("res");
         }
     }
 }
