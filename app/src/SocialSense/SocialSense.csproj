@@ -74,6 +74,7 @@
     <Compile Include="Shared\DateParser.cs" />
     <Compile Include="Shared\GoogleSource.cs" />
     <Compile Include="Shared\Language.cs" />
+    <Compile Include="Shared\ParserException.cs" />
     <Compile Include="Shared\Period.cs" />
     <Compile Include="Shared\Query.cs" />
     <Compile Include="Shared\ResultItem.cs" />

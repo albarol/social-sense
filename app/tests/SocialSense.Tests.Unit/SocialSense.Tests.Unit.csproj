@@ -93,9 +93,6 @@
     <Content Include="Resources\Parsers\BingResult-v1.htm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Parsers\BingResult-v2.htm">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Resources\Parsers\DiggResult-v1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

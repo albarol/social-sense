@@ -1,5 +1,7 @@
 ﻿namespace SocialSense.Engines.Configurations
 {
+    using System;
+
     using SocialSense.Engines;
     using SocialSense.Parsers;
     using SocialSense.Spiders;
@@ -8,6 +10,11 @@
 
     public class DiggEngineConfiguration : IEngineConfiguration
     {
+        public DiggEngineConfiguration()
+        {
+            throw new NotSupportedException();
+        }
+        
         public IParser Parser
         {
             get
