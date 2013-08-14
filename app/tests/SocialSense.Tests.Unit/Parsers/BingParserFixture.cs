@@ -23,7 +23,7 @@
         [Test]
         public void Parse_ResultShouldNotBeEmpty()
         {
-            var results = this.parser.Parse(IoHelper.ReadContentWithDecode("parsers/BingResult-v1.htm"));
+            var results = this.parser.Parse(IoHelper.ReadContentWithDecode("Parsers/BingResult-v1.htm"));
             results.Items.Count.Should().Be.GreaterThan(0);
         }
 

@@ -23,7 +23,7 @@
         [Test]
         public void Parse_ResultShouldNotBeEmpty()
         {
-            var results = this.parser.Parse(IoHelper.ReadContent("parsers/DiggResult-v1.txt"));
+            var results = this.parser.Parse(IoHelper.ReadContent("Parsers/DiggResult-v1.txt"));
             results.Items.Count.Should().Be.GreaterThanOrEqualTo(1);
         }
 

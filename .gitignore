@@ -23,4 +23,5 @@ NDependOut/
 *.ndproj
 *.DotSettings
 *.StyleCop
+*.userprefs
 Download/

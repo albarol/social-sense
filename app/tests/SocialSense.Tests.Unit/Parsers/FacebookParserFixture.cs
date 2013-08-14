@@ -23,7 +23,7 @@
         [Test]
         public void Parse_ResultShouldNotBeEmpty()
         {
-            var results = this.parser.Parse(IoHelper.ReadContent("parsers/facebook-result-v1.json"));
+            var results = this.parser.Parse(IoHelper.ReadContent("Parsers/facebook-result-v1.json"));
             results.Items.Count.Should().Be.EqualTo(2);
         }
 

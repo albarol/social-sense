@@ -23,7 +23,7 @@
         [Test]
         public void Parse_ResultShouldNotBeEmpty()
         {
-            var results = this.parser.Parse(IoHelper.ReadContent("parsers/google-plus-v1.json"));
+            var results = this.parser.Parse(IoHelper.ReadContent("Parsers/google-plus-v1.json"));
             results.Items.Count.Should().Be.GreaterThanOrEqualTo(1);
         }
 
