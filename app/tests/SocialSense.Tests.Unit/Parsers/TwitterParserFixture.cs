@@ -23,7 +23,7 @@
         [Test]
         public void Parse_ResultShouldNotBeEmpty()
         {
-            var results = this.parser.Parse(IoHelper.ReadContent("parsers/twitter-result-v1.json"));
+            var results = this.parser.Parse(IoHelper.ReadContent("Parsers/twitter-result-v1.json"));
             results.Items.Count.Should().Be.GreaterThanOrEqualTo(1);
         }
 

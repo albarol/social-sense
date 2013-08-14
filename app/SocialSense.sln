@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{1149F426-5410-40F9-A82D-CECA221B0ED6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{82265319-3F94-4CC2-AF24-4633DE2144DA}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialSense", "src\SocialSense\SocialSense.csproj", "{46CD5A66-1BB2-46EC-9F78-9C64464F52B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{82265319-3F94-4CC2-AF24-4633DE2144DA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialSense.Tests.Integration", "tests\SocialSense.Tests.Integration\SocialSense.Tests.Integration.csproj", "{6E4526C1-A6B8-40F2-AFF3-70B71E1FDEC2}"
 EndProject
@@ -30,12 +30,29 @@ Global
 		{CC625340-2439-4E43-999B-07626EB4A9E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC625340-2439-4E43-999B-07626EB4A9E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{46CD5A66-1BB2-46EC-9F78-9C64464F52B8} = {1149F426-5410-40F9-A82D-CECA221B0ED6}
 		{6E4526C1-A6B8-40F2-AFF3-70B71E1FDEC2} = {82265319-3F94-4CC2-AF24-4633DE2144DA}
 		{CC625340-2439-4E43-999B-07626EB4A9E5} = {82265319-3F94-4CC2-AF24-4633DE2144DA}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = src\SocialSense\SocialSense.csproj
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = None
+		$1.ResourceNamePolicy = FileFormatDefault
+		$0.TextStylePolicy = $2
+		$2.FileWidth = 120
+		$2.EolMarker = Windows
+		$2.inheritsSet = VisualStudio
+		$2.inheritsScope = text/plain
+		$2.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $3
+		$3.inheritsSet = Mono
+		$3.inheritsScope = text/x-csharp
+		$3.scope = text/x-csharp
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
