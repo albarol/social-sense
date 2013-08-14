@@ -24,4 +24,5 @@ NDependOut/
 *.DotSettings
 *.StyleCop
 *.userprefs
+test-results/
 Download/
