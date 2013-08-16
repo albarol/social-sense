@@ -8,6 +8,13 @@
 
     public class FacebookEngineConfiguration : IEngineConfiguration
     {
+        private string accessToken;
+
+        public FacebookEngineConfiguration(string accessToken)
+        {
+            this.accessToken = accessToken;
+        }
+
         public IParser Parser
         {
             get
@@ -20,7 +27,7 @@
         {
             get
             {
-                return new FacebookUrlBuilder();
+                return new FacebookUrlBuilder(this.accessToken);
             }
         }
 

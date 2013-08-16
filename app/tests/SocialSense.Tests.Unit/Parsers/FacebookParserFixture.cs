@@ -21,10 +21,10 @@
         }
 
         [Test]
-        public void Parse_ResultShouldNotBeEmpty()
+        public void Parse_ResultShouldNotBeEmpty ()
         {
-            var results = this.parser.Parse(IoHelper.ReadContent("Parsers/facebook-result-v1.json"));
-            results.Items.Count.Should().Be.EqualTo(2);
+            var results = this.parser.Parse (IoHelper.ReadContent ("Parsers/facebook-result-v1.json"));
+            results.Items.Count.Should().Be.GreaterThan(0);
         }
 
         [Test, ExpectedException(typeof(ArgumentException))]
