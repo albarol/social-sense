@@ -42,6 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authorization\AuthorizationVia.cs" />
+    <Compile Include="Authorization\FacebookAuthorization.cs" />
+    <Compile Include="Authorization\GooglePlusAuthorization.cs" />
+    <Compile Include="Authorization\IAuthorization.cs" />
+    <Compile Include="Authorization\TwitterAuthorization.cs" />
     <Compile Include="Engines\Configurations\BingEngineConfiguration.cs" />
     <Compile Include="Engines\Configurations\DiggEngineConfiguration.cs" />
     <Compile Include="Engines\Configurations\FacebookEngineConfiguration.cs" />
@@ -77,6 +82,7 @@
     <Compile Include="Shared\Query.cs" />
     <Compile Include="Shared\ResultItem.cs" />
     <Compile Include="Shared\SearchResult.cs" />
+    <Compile Include="Spiders\Behaviors\AuthorizationBehavior.cs" />
     <Compile Include="Spiders\Behaviors\Behavior.cs" />
     <Compile Include="Spiders\Behaviors\CookieBehavior.cs" />
     <Compile Include="Spiders\Behaviors\DelayBehavior.cs" />

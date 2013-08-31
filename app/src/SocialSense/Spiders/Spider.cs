@@ -23,12 +23,12 @@
         public virtual string DownloadContent(string url)
         {
             this.HttpWebRequest = (HttpWebRequest)WebRequest.Create(url);
-            this.HttpWebRequest.Timeout = (int)TimeSpan.FromSeconds(this.TimeOut).TotalMilliseconds;
 
             foreach (var behavior in this.behaviors)
             {
                 behavior.Execute();
             }
+            this.HttpWebRequest.Timeout = (int)TimeSpan.FromSeconds(this.TimeOut).TotalMilliseconds;
 
             var webResponse = (HttpWebResponse)this.HttpWebRequest.GetResponse();
 

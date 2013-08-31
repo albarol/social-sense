@@ -1,4 +1,6 @@
-﻿namespace SocialSense.Tests.Integration.Engines
+﻿using SocialSense.Authorization;
+
+namespace SocialSense.Tests.Integration.Engines
 {
     using NUnit.Framework;
 
@@ -16,7 +18,7 @@
         [SetUp]
         public void SetUp()
         {
-            this.engine = EngineFactory.Twitter();
+            this.engine = EngineFactory.Twitter(new TwitterAuthorization());
         }
 
         [TestCase("cultura")]

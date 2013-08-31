@@ -1,4 +1,6 @@
-﻿namespace SocialSense.Engines.Configurations
+﻿using SocialSense.Authorization;
+
+namespace SocialSense.Engines.Configurations
 {
     using SocialSense.Engines;
     using SocialSense.Parsers;
@@ -8,11 +10,11 @@
 
     public class FacebookEngineConfiguration : IEngineConfiguration
     {
-        private string accessToken;
+        private IAuthorization authorization;
 
-        public FacebookEngineConfiguration(string accessToken)
+        public FacebookEngineConfiguration(IAuthorization authorization)
         {
-            this.accessToken = accessToken;
+            this.authorization = authorization;
         }
 
         public IParser Parser
@@ -27,7 +29,7 @@
         {
             get
             {
-                return new FacebookUrlBuilder(this.accessToken);
+                return new FacebookUrlBuilder();
             }
         }
 
@@ -36,6 +38,7 @@
             get
             {
                 var spider = new Spider();
+                spider.AddBehavior(new AuthorizationBehavior(this.authorization));
                 spider.AddBehavior(new RandomUserAgentBehavior());
                 return spider;
             }

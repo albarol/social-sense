@@ -1,4 +1,6 @@
-﻿namespace SocialSense.Extensions
+﻿using SocialSense.Authorization;
+
+namespace SocialSense.Extensions
 {
     using SocialSense.Engines;
     using SocialSense.Engines.Configurations;
@@ -15,9 +17,9 @@
             return new Engine(new DiggEngineConfiguration());
         }
 
-        public static Engine Facebook(string accessToken)
+        public static Engine Facebook(FacebookAuthorization authorization)
         {
-            return new Engine(new FacebookEngineConfiguration(accessToken));
+            return new Engine(new FacebookEngineConfiguration(authorization));
         }
 
         public static Engine GoogleNews()
@@ -30,14 +32,14 @@
             return new Engine(new GoogleEngineConfiguration());
         }
 
-        public static Engine GooglePlus(string apiKey)
+        public static Engine GooglePlus(GooglePlusAuthorization authorization)
         {
-            return new Engine(new GooglePlusEngineConfiguration(apiKey));
+            return new Engine(new GooglePlusEngineConfiguration(authorization));
         }
 
-        public static Engine Twitter()
+        public static Engine Twitter(TwitterAuthorization authorization)
         {
-            return new Engine(new TwitterEngineConfiguration());
+            return new Engine(new TwitterEngineConfiguration(authorization));
         }
 
         public static Engine Yahoo()
