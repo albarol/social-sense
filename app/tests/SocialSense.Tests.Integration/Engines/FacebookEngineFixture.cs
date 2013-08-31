@@ -16,7 +16,7 @@
         [SetUp]
         public void SetUp()
         {
-            this.engine = EngineFactory.Facebook();
+            this.engine = EngineFactory.Facebook("Access_Token");
         }
 
         [TestCase("cultura")]

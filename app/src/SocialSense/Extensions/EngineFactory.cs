@@ -15,9 +15,9 @@
             return new Engine(new DiggEngineConfiguration());
         }
 
-        public static Engine Facebook()
+        public static Engine Facebook(string accessToken)
         {
-            return new Engine(new FacebookEngineConfiguration());
+            return new Engine(new FacebookEngineConfiguration(accessToken));
         }
 
         public static Engine GoogleNews()

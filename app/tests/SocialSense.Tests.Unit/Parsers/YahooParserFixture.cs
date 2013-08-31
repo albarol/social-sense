@@ -23,14 +23,14 @@
         [Test]
         public void Parse_ResultShouldNotBeEmpty()
         {
-            var results = this.parser.Parse(IoHelper.ReadContentWithDecode("parsers/YahooResult-v1.htm"));
+            var results = this.parser.Parse(IoHelper.ReadContentWithDecode("Parsers/YahooResult-v1.htm"));
             results.Items.Count.Should().Be.GreaterThan(0);
         }
 
         [Test]
         public void Parser_ResultShouldHaveNextPage()
         {
-            var results = this.parser.Parse(IoHelper.ReadContentWithDecode("parsers/YahooResult-v1.htm"));
+            var results = this.parser.Parse(IoHelper.ReadContentWithDecode("Parsers/YahooResult-v1.htm"));
             results.HasNextPage.Should().Be.True();
         }
 

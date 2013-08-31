@@ -23,7 +23,7 @@
         [Test]
         public void Parse_ResultShouldNotBeEmpty()
         {
-            var results = this.parser.Parse(IoHelper.ReadContent("parsers/GoogleNews-v1.htm"));
+            var results = this.parser.Parse(IoHelper.ReadContent("Parsers/GoogleNews-v1.htm"));
             results.Items.Count.Should().Be.GreaterThan(0);
         }
 
