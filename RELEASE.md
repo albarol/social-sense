@@ -8,3 +8,7 @@
 
 * Fixed new layouts - Yahoo and Bing
 * Digg was discontinued for while (because API doesn't exists anymore)
+
+## version=1.2
+
+* Added authorization support

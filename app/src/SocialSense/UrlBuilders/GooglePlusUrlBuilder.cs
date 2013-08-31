@@ -10,12 +10,10 @@
     public class GooglePlusUrlBuilder : IUrlBuilder
     {
         private readonly ILocation location;
-        private readonly string apiKey;
         private StringBuilder builder;
         
-        public GooglePlusUrlBuilder(string apiKey)
+        public GooglePlusUrlBuilder()
         {
-            this.apiKey = apiKey;
             this.location = new GooglePlusLocation();
         }
 
@@ -27,7 +25,7 @@
             }
 
             this.builder = new StringBuilder("https://www.googleapis.com/plus/v1/activities?fields=items(actor%2FdisplayName%2Cobject(attachments(content%2CobjectType)%2Ccontent%2CobjectType)%2Cpublished)%2CnextLink%2Ctitle%2Cupdated&pp=1");
-            this.builder.AppendFormat("&orderBy=recent&maxResults=20&key={0}&query={1}", this.apiKey, query.Term);
+            this.builder.AppendFormat("&orderBy=recent&maxResults=20&query={0}", query.Term);
             this.AppendLanguage(query.Language);
             this.AppendPage(query.Parameters);
             return this.builder.ToString();

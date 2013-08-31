@@ -15,7 +15,7 @@
         [SetUp]
         public void SetUp()
         {
-            this.builder = new GooglePlusUrlBuilder("ppppppppppppppppp");
+            this.builder = new GooglePlusUrlBuilder();
         }
 
         [Test, ExpectedException(typeof(ArgumentException))]
@@ -24,8 +24,8 @@
             this.builder.WithQuery(new Query());
         }
 
-        [TestCase("cultura", Result = "https://www.googleapis.com/plus/v1/activities?fields=items(actor%2FdisplayName%2Cobject(attachments(content%2CobjectType)%2Ccontent%2CobjectType)%2Cpublished)%2CnextLink%2Ctitle%2Cupdated&pp=1&orderBy=recent&maxResults=20&key=ppppppppppppppppp&query=cultura")]
-        [TestCase("cultura-v2", Result = "https://www.googleapis.com/plus/v1/activities?fields=items(actor%2FdisplayName%2Cobject(attachments(content%2CobjectType)%2Ccontent%2CobjectType)%2Cpublished)%2CnextLink%2Ctitle%2Cupdated&pp=1&orderBy=recent&maxResults=20&key=ppppppppppppppppp&query=cultura-v2")]
+        [TestCase("cultura", Result = "https://www.googleapis.com/plus/v1/activities?fields=items(actor%2FdisplayName%2Cobject(attachments(content%2CobjectType)%2Ccontent%2CobjectType)%2Cpublished)%2CnextLink%2Ctitle%2Cupdated&pp=1&orderBy=recent&maxResults=20&query=cultura")]
+        [TestCase("cultura-v2", Result = "https://www.googleapis.com/plus/v1/activities?fields=items(actor%2FdisplayName%2Cobject(attachments(content%2CobjectType)%2Ccontent%2CobjectType)%2Cpublished)%2CnextLink%2Ctitle%2Cupdated&pp=1&orderBy=recent&maxResults=20&query=cultura-v2")]
         public string WithQuery_IncludeTermInQuery(string term)
         {
             return this.builder.WithQuery(new Query { Term = term });
@@ -45,9 +45,9 @@
             
         }
 
-        [TestCase(Language.Portuguese, Result = "https://www.googleapis.com/plus/v1/activities?fields=items(actor%2FdisplayName%2Cobject(attachments(content%2CobjectType)%2Ccontent%2CobjectType)%2Cpublished)%2CnextLink%2Ctitle%2Cupdated&pp=1&orderBy=recent&maxResults=20&key=ppppppppppppppppp&query=cultura&language=pt-PT")]
-        [TestCase(Language.English, Result = "https://www.googleapis.com/plus/v1/activities?fields=items(actor%2FdisplayName%2Cobject(attachments(content%2CobjectType)%2Ccontent%2CobjectType)%2Cpublished)%2CnextLink%2Ctitle%2Cupdated&pp=1&orderBy=recent&maxResults=20&key=ppppppppppppppppp&query=cultura&language=en-US")]
-        [TestCase(Language.Undefined, Result = "https://www.googleapis.com/plus/v1/activities?fields=items(actor%2FdisplayName%2Cobject(attachments(content%2CobjectType)%2Ccontent%2CobjectType)%2Cpublished)%2CnextLink%2Ctitle%2Cupdated&pp=1&orderBy=recent&maxResults=20&key=ppppppppppppppppp&query=cultura")]
+        [TestCase(Language.Portuguese, Result = "https://www.googleapis.com/plus/v1/activities?fields=items(actor%2FdisplayName%2Cobject(attachments(content%2CobjectType)%2Ccontent%2CobjectType)%2Cpublished)%2CnextLink%2Ctitle%2Cupdated&pp=1&orderBy=recent&maxResults=20&query=cultura&language=pt-PT")]
+        [TestCase(Language.English, Result = "https://www.googleapis.com/plus/v1/activities?fields=items(actor%2FdisplayName%2Cobject(attachments(content%2CobjectType)%2Ccontent%2CobjectType)%2Cpublished)%2CnextLink%2Ctitle%2Cupdated&pp=1&orderBy=recent&maxResults=20&query=cultura&language=en-US")]
+        [TestCase(Language.Undefined, Result = "https://www.googleapis.com/plus/v1/activities?fields=items(actor%2FdisplayName%2Cobject(attachments(content%2CobjectType)%2Ccontent%2CobjectType)%2Cpublished)%2CnextLink%2Ctitle%2Cupdated&pp=1&orderBy=recent&maxResults=20&query=cultura")]
         public string WithQuery_IncludeLanguageInQuery(Language language)
         {
             return this.builder.WithQuery(new Query { Term = "cultura", Language = language });

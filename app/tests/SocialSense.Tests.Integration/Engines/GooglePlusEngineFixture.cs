@@ -1,4 +1,6 @@
-﻿namespace SocialSense.Tests.Integration.Engines
+﻿using SocialSense.Authorization;
+
+namespace SocialSense.Tests.Integration.Engines
 {
     using NUnit.Framework;
 
@@ -16,7 +18,7 @@
         [SetUp]
         public void SetUp()
         {
-            this.engine = EngineFactory.GooglePlus("AIzaSyDazHELlbnIFLkH_3p9L5hPo70tJVk-vO4");
+            this.engine = EngineFactory.GooglePlus(new GooglePlusAuthorization { ApiKey = "AIzaSyDazHELlbnIFLkH_3p9L5hPo70tJVk-vO4" });
         }
 
         [TestCase("cultura")]
