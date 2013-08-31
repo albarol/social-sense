@@ -16,7 +16,7 @@
         [SetUp]
         public void SetUp()
         {
-            this.engine = EngineFactory.Facebook("CAACEdEose0cBAAstgdecp6dAZCfUxSZBZCRITD1Awpo3efNgDDDRb5M2l30ZBepiS3SZCsb8qQjSZAeiYUm9cgUkNyQFqdiCyUJ1mF3i2ZAnpR8cZCAZAl7RiJsf3ktssV6aLoxRLUWXHHz5kuPZAHE8CKKsBYv4DdJ5CqXiO9D1yBVgZDZD");
+            this.engine = EngineFactory.Facebook("Access_Token");
         }
 
         [TestCase("cultura")]
