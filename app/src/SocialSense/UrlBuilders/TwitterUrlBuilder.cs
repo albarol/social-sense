@@ -24,7 +24,7 @@
                 throw new ArgumentException("term not be null -or- term not be empty");
             }
 
-            this.builder = new StringBuilder("http://search.twitter.com/search.json?rpp=100&result_type=recent");
+            this.builder = new StringBuilder("https://api.twitter.com/1.1/search/tweets.json?rpp=100&result_type=recent");
             this.builder.AppendFormat("&q={0}", HttpUtility.UrlEncode(query.Term));
             
             this.AppendLanguage(query.Language);

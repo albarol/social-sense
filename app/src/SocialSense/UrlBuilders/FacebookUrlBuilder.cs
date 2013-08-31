@@ -10,7 +10,6 @@
     {
         private readonly ILocation location;
         private StringBuilder builder;
-        private string accessToken;
 
         public FacebookUrlBuilder()
         {
@@ -25,7 +24,7 @@
             }
 
             this.builder = new StringBuilder("https://graph.facebook.com/search?type=post&metadata=1&callback=display&limit=50");
-            this.builder.AppendFormat("&q={1}", this.accessToken, query.Term);
+            this.builder.AppendFormat("&q={0}", query.Term);
 
             this.AppendRegion(query.Language, query.Country);
             this.AppendPeriod(query.Period);
