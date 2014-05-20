@@ -6,7 +6,7 @@
 
     using NUnit.Framework;
 
-    using SharpTestsEx;
+	using FluentAssertions;
 
     using SocialSense.Spiders;
 
@@ -26,7 +26,7 @@
         {
             this.spider.Setup(s => s.DownloadContent(It.IsAny<string>())).Returns("content");
             var content = this.spider.Object.DownloadContent("http://www.uol.com.br");
-            content.Should().Not.Be.Null();
+            content.Should().NotBeNull();
         }
 
         [Test, ExpectedException(typeof(UriFormatException))]

@@ -4,7 +4,7 @@
 
     using NUnit.Framework;
 
-    using SharpTestsEx;
+	using FluentAssertions;
 
     using SocialSense.Shared;
     using SocialSense.UrlBuilders;
@@ -45,7 +45,7 @@
             var url = this.builder.WithQuery(query);
 
             // Assert:
-            url.Should().Be.EqualTo("http://www.bing.com/search?q=cultura");
+            url.Should().Be("http://www.bing.com/search?q=cultura");
         }
 
         [TestCase(Language.Portuguese, Result = "http://www.bing.com/search?q=cultura +language:pt_br&first=1")]

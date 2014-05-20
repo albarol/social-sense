@@ -4,7 +4,7 @@
 
     using NUnit.Framework;
 
-    using SharpTestsEx;
+	using FluentAssertions;
 
     using SocialSense.Parsers;
     using SocialSense.Tests.Unit.Helpers;
@@ -24,14 +24,14 @@
         public void Parse_ResultShouldNotBeEmpty()
         {
             var results = this.parser.Parse(IoHelper.ReadContentWithDecode("Parsers/YahooResult-v1.htm"));
-            results.Items.Count.Should().Be.GreaterThan(0);
+            results.Items.Count.Should().BeGreaterThan(0);
         }
 
         [Test]
         public void Parser_ResultShouldHaveNextPage()
         {
             var results = this.parser.Parse(IoHelper.ReadContentWithDecode("Parsers/YahooResult-v1.htm"));
-            results.HasNextPage.Should().Be.True();
+            results.HasNextPage.Should().BeTrue();
         }
 
         [Test, ExpectedException(typeof(ArgumentException))]
@@ -44,7 +44,7 @@
         public void Parse_ResultShouldBeEmptyWhenTokenIsInvalid()
         {
             var result = this.parser.Parse("<!doctype><html><body></body></html>");
-            result.Items.Count.Should().Be.EqualTo(0);
+            result.Items.Count.Should().Be(0);
         }
     }
 }

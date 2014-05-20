@@ -4,7 +4,7 @@
 
     using NUnit.Framework;
 
-    using SharpTestsEx;
+	using FluentAssertions;
 
     using SocialSense.Spiders;
     using SocialSense.Spiders.Behaviors;
@@ -37,7 +37,7 @@
         {
             this.initialDate = DateTime.Now;
             this.spider.DownloadContent("http://www.uol.com.br");
-            (DateTime.Now - this.initialDate).TotalSeconds.Should().Be.GreaterThanOrEqualTo(2).And.Be.LessThanOrEqualTo(9);
+            (DateTime.Now - this.initialDate).TotalSeconds.Should().BeGreaterOrEqualTo(2).And.BeLessOrEqualTo(9);
         }
     }
 }

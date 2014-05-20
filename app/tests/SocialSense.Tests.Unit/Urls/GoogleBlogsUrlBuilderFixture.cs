@@ -4,7 +4,7 @@
 
     using NUnit.Framework;
 
-    using SharpTestsEx;
+	using FluentAssertions;
 
     using SocialSense.Shared;
     using SocialSense.UrlBuilders;
@@ -44,7 +44,7 @@
             var url = this.builder.WithQuery(query);
 
             // Assert:
-            url.Should().Be.EqualTo(string.Format("http://www.google.com/search?&safe=images&tbm=blg&num=100&q=cultura&tbs=cdr:1,cd_min:{0},cd_max:{1}&start=0", period.Begin.ToString("yyyy-MM-dd"), period.End.ToString("yyyy-MM-dd")));
+            url.Should().Be(string.Format("http://www.google.com/search?&safe=images&tbm=blg&num=100&q=cultura&tbs=cdr:1,cd_min:{0},cd_max:{1}&start=0", period.Begin.ToString("yyyy-MM-dd"), period.End.ToString("yyyy-MM-dd")));
         }
 
         [TestCase(Language.Portuguese, Result = "http://www.google.com/search?&safe=images&tbm=blg&num=100&q=cultura&lr=lang_pt&tbs=qdr:h&start=0")]

@@ -4,7 +4,7 @@
 
     using NUnit.Framework;
 
-    using SharpTestsEx;
+	using FluentAssertions;
 
     using SocialSense.Shared;
     using SocialSense.UrlBuilders;
@@ -47,7 +47,7 @@
             var beginUnixTime = DateParser.ToUnixTimestamp(period.Begin);
             var endUnixTime = DateParser.ToUnixTimestamp(period.End);
             var comparableUrl = string.Format("http://services.digg.com/2.0/search.search?count=100&media=news&query=cultura&min_date={0}&max_date={1}&offset=1", beginUnixTime, endUnixTime);
-            resultUrl.Should().Be.EqualTo(comparableUrl);
+            resultUrl.Should().Be(comparableUrl);
         }
 
         [Ignore("Digg does not support language parameter")]

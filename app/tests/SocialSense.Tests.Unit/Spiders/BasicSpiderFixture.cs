@@ -4,7 +4,7 @@
 
     using NUnit.Framework;
 
-    using SharpTestsEx;
+	using FluentAssertions;
 
     using SocialSense.Spiders;
 
@@ -23,7 +23,7 @@
         public void DownloadString_CanReadContent()
         {
             var content = this.spider.DownloadContent("http://www.uol.com.br");
-            content.Should().Not.Be.Null();
+			content.Should().NotBeNull();
         }
 
         [Test, ExpectedException(typeof(UriFormatException))]

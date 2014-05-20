@@ -4,7 +4,7 @@
 
     using NUnit.Framework;
 
-    using SharpTestsEx;
+	using FluentAssertions;
 
     using SocialSense.Shared;
     using SocialSense.UrlBuilders;
@@ -44,7 +44,7 @@
             var url = this.builder.WithQuery(query);
 
             // Assert:
-            url.Should().Be.EqualTo(string.Format("https://api.twitter.com/1.1/search/tweets.json?rpp=100&result_type=recent&q=cultura&since={0}&page=1", period.Begin.ToString("yyyy-MM-dd")));
+            url.Should().Be(string.Format("https://api.twitter.com/1.1/search/tweets.json?rpp=100&result_type=recent&q=cultura&since={0}&page=1", period.Begin.ToString("yyyy-MM-dd")));
         }
 
         [TestCase(Language.Portuguese, Result = "https://api.twitter.com/1.1/search/tweets.json?rpp=100&result_type=recent&q=cultura&lang=pt&page=1")]

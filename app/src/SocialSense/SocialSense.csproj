@@ -108,6 +108,11 @@
     <Compile Include="UrlBuilders\Parameters\YahooLocation.cs" />
     <Compile Include="UrlBuilders\TwitterUrlBuilder.cs" />
     <Compile Include="UrlBuilders\YahooUrlBuilder.cs" />
+    <Compile Include="Network\RequestManager.cs" />
+    <Compile Include="Network\HttpMethod.cs" />
+    <Compile Include="Network\HttpRequest.cs" />
+    <Compile Include="Network\HttpResponse.cs" />
+    <Compile Include="Network\HttpReply.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -121,4 +126,7 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <Folder Include="Network\" />
+  </ItemGroup>
 </Project>

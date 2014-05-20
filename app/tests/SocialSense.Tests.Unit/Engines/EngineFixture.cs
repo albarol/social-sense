@@ -7,7 +7,7 @@
 
     using NUnit.Framework;
 
-    using SharpTestsEx;
+	using FluentAssertions;
 
     using SocialSense.Engines;
     using SocialSense.Parsers;
@@ -158,7 +158,7 @@
             var results = this.engine.Search(query);
 
             // Assert:
-            results.Count.Should().Be.EqualTo(7);
+            results.Count.Should().Be(7);
         }
 
         [Test]
@@ -192,7 +192,7 @@
             var results = this.engine.Search(new Query());
 
             // Assert:
-            results.Count.Should().Be.EqualTo(5);
+            results.Count.Should().Be(5);
         }
     }
 }
