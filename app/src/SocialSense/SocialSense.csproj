@@ -115,6 +115,18 @@
     <Compile Include="Network\HttpResponse.cs" />
     <Compile Include="Network\HttpReply.cs" />
     <Compile Include="Network\HttpExtensions.cs" />
+    <Compile Include="Providers\GoogleSites\GoogleSiteFlow.cs" />
+    <Compile Include="Providers\GoogleSites\GoogleSiteUrlBuilder.cs" />
+    <Compile Include="Providers\GoogleSites\GoogleSiteParser.cs" />
+    <Compile Include="Providers\IBasicFlow.cs" />
+    <Compile Include="Providers\Locale\BingLocation.cs" />
+    <Compile Include="Providers\Locale\FacebookLocation.cs" />
+    <Compile Include="Providers\Locale\GoogleLocation.cs" />
+    <Compile Include="Providers\Locale\GooglePlusLocation.cs" />
+    <Compile Include="Providers\Locale\ILocation.cs" />
+    <Compile Include="Providers\Locale\TwitterLocation.cs" />
+    <Compile Include="Providers\Locale\YahooLocation.cs" />
+    <Compile Include="Engine.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -130,5 +142,8 @@
   -->
   <ItemGroup>
     <Folder Include="Network\" />
+    <Folder Include="Providers\" />
+    <Folder Include="Providers\GoogleSites\" />
+    <Folder Include="Providers\Locale\" />
   </ItemGroup>
 </Project>

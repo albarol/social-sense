@@ -110,6 +110,7 @@
     <Compile Include="Urls\TwitterUrlBuilderFixture.cs" />
     <Compile Include="Urls\YahooUrlBuilderFixture.cs" />
     <Compile Include="Network\RequestManagerTestCase.cs" />
+    <Compile Include="Providers\GoogleSiteFlowTestCase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -157,5 +158,6 @@
   -->
   <ItemGroup>
     <Folder Include="Network\" />
+    <Folder Include="Providers\" />
   </ItemGroup>
 </Project>

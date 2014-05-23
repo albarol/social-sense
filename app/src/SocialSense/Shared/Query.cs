@@ -16,7 +16,7 @@
         public Period? Period { get; set; }
         public Language? Language { get; set; }
         public Country? Country { get; set; }
-        public IDictionary<string, string> Parameters { get; set; }
+		public IDictionary<string, string> Parameters { get; set; }
         public int Page
         {
             get
