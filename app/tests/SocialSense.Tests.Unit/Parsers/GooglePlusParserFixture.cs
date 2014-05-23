@@ -4,7 +4,7 @@
 
     using NUnit.Framework;
 
-    using SharpTestsEx;
+	using FluentAssertions;
 
     using SocialSense.Parsers;
     using SocialSense.Tests.Unit.Helpers;
@@ -24,7 +24,7 @@
         public void Parse_ResultShouldNotBeEmpty()
         {
             var results = this.parser.Parse(IoHelper.ReadContent("Parsers/google-plus-v1.json"));
-            results.Items.Count.Should().Be.GreaterThanOrEqualTo(1);
+            results.Items.Count.Should().BeGreaterOrEqualTo(1);
         }
 
         [Test, ExpectedException(typeof(ArgumentException))]
@@ -43,7 +43,7 @@
         public void Parse_ResultShouldBeEmptyWhenTokenIsInvalid()
         {
             var result = this.parser.Parse("{invalid_token:'invalid_token'}");
-            result.Items.Count.Should().Be.EqualTo(0);
+            result.Items.Count.Should().Be(0);
         }
     }
 }
