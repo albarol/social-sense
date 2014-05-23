@@ -35,6 +35,7 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\packages\Newtonsoft.Json.4.5.9\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Package>monodevelop</Package>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -113,6 +114,7 @@
     <Compile Include="Network\HttpRequest.cs" />
     <Compile Include="Network\HttpResponse.cs" />
     <Compile Include="Network\HttpReply.cs" />
+    <Compile Include="Network\HttpExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

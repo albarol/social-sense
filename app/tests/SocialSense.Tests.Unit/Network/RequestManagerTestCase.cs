@@ -28,6 +28,33 @@ namespace SocialSense.Tests.Unit.Network
 			});
 			resetEvent.WaitOne ();
 		}
+
+		[Test]
+		public void Get_ShouldGetContentUsingHeaders()
+		{
+			var resetEvent = new ManualResetEvent(false);
+			HttpRequest request = new HttpRequest ("http://www.google.com.br");
+			request.Headers.Add ("token", "test_token");
+			this.requester.Execute (request, (response) => {
+				response.Content.Should ().NotBeNullOrEmpty ();
+				resetEvent.Set ();
+			});
+			resetEvent.WaitOne ();
+		}
+
+		[Test]
+		public void Get_ShouldGetContentUsingParameters()
+		{
+			var resetEvent = new ManualResetEvent(false);
+			HttpRequest request = new HttpRequest ("http://www.google.com.br");
+			request.Parameters.Add ("token", "test_token");
+			this.requester.Execute (request, (response) => {
+				response.Content.Should ().NotBeNullOrEmpty ();
+				resetEvent.Set ();
+			});
+			resetEvent.WaitOne ();
+		}
+		
     }
 }
 
