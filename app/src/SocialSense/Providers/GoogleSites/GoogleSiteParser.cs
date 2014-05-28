@@ -31,11 +31,12 @@ namespace SocialSense.Providers.GoogleSites
 
 			IList<ResultItem> results = new List<ResultItem>();
 
-			foreach (var node in parentNode.ChildNodes)
+            foreach (var node in parentNode.ChildNodes)
 			{
-				if (node.SelectSingleNode("ol") == null)
+                var hasTable = node.SelectSingleNode ("table") != null || node.SelectSingleNode("div/table") != null;
+                if (!hasTable)
 				{
-					results.Add(this.GetResultInNode(node));
+                    results.Add(this.GetResultInNode(node));
 				}
 			}
 
@@ -48,7 +49,7 @@ namespace SocialSense.Providers.GoogleSites
 
 		protected ResultItem GetResultInNode(HtmlNode node)
 		{
-			return new ResultItem
+            return new ResultItem
 			{
 				Url = this.ExtractUrl(node),
 				Date = this.ExtractDate(node),
@@ -60,15 +61,15 @@ namespace SocialSense.Providers.GoogleSites
 
 		protected override string ExtractUrl(HtmlNode node)
 		{
-			var builder = node.SelectSingleNode("h3/a").Attributes["href"].Value;
+            var builder = node.SelectSingleNode("h3/a").Attributes["href"].Value;
 			builder = builder.Replace("/url?q=", string.Empty);
-			builder = builder.Substring(0, builder.IndexOf("&", StringComparison.Ordinal));
-			return HttpUtility.UrlDecode(builder);
+            builder = builder.Substring(0, builder.IndexOf("&", StringComparison.Ordinal));
+            return HttpUtility.UrlDecode(builder);
 		}
 
 		protected override string ExtractSnippet(HtmlNode node)
 		{
-			var htmlNode = node.SelectSingleNode("div[2]");
+            var htmlNode = node.SelectSingleNode("div/span");
 			return (htmlNode != null) ? htmlNode.InnerText : string.Empty;
 		}
 
@@ -86,12 +87,14 @@ namespace SocialSense.Providers.GoogleSites
 
 		protected override string ExtractTitle(HtmlNode node)
 		{
-			return node.SelectSingleNode("h3/a").InnerText;
+            return node.SelectSingleNode("h3/a").InnerText;
 		}
 
 		protected override string ExtractAuthor(HtmlNode node)
 		{
-			return node.SelectSingleNode("div[1]").InnerText;
+            var builder = node.SelectSingleNode("h3/a").Attributes["href"].Value;
+            Uri uri = new Uri (builder.Replace("/url?q=", string.Empty));
+            return uri.Host;
 		}
 
 		private bool HasNextPage(string content)

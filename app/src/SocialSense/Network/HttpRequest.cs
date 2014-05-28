@@ -23,6 +23,7 @@ namespace SocialSense.Network
 		public HttpMethod Method { get;set; }
 		public IDictionary<string, string> Headers { get { return headers; } }
 		public IDictionary<string, string> Parameters { get { return parameters; } }
+        public string UserAgent { get; set; }
     }
 }
 

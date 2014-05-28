@@ -25,9 +25,10 @@ namespace SocialSense.Network
 			var finalUrl = string.Format ("{0}{1}", request.Uri.ToString (), HttpExtensions.ConvertToGetParameters(request.Parameters)); 
 			HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create (finalUrl);
 			webRequest.Method = request.Method.ToString ();
+            webRequest.UserAgent = request.UserAgent;
 			foreach (var item in request.Headers) 
 			{
-				webRequest.Headers.Set (item.Key, item.Value);
+                webRequest.Headers.Set (item.Key, item.Value);
 			}
 
 			HttpReply reply = new HttpReply (webRequest, callback);

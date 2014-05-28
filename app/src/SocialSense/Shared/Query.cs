@@ -5,6 +5,7 @@
     public class Query
     {
         private int maxResults;
+        private int minResults;
         private int page;
 
         public Query()
@@ -32,6 +33,20 @@
             set
             {
                 this.page = value;
+            }
+        }
+
+        public int MinResults 
+        {
+            get {
+                return this.minResults == 0 ? 400 : this.minResults;
+            }
+            set
+            {
+                if (value >= 1)
+                {
+                    this.minResults = value;
+                }
             }
         }
 

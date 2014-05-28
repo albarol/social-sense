@@ -20,8 +20,8 @@ namespace SocialSense.Tests.Unit.Providers
 		public void Search_VerifyIfGoogleSiteReturnSomeResult()
 		{
 			var resetEvent = new ManualResetEvent(false);
-			this.flow.Search(new Query { Term = "socialsense", MaxResults = 10 }, (results) => {
-				results.Count.Should().BeLessOrEqualTo(10);
+            this.flow.Search(new Query { Term = "google", MinResults = 20 }, (results) => {
+                results.Count.Should().BeGreaterOrEqualTo(20);
 				resetEvent.Set ();
 			});
 			resetEvent.WaitOne ();
