@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace SocialSense
 {
-	public interface IBasicFlow
+	public interface IFinder
     {
 		void Search(Query query, Action<IList<ResultItem>> callback);
     }

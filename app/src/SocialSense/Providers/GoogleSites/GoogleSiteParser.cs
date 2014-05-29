@@ -99,7 +99,7 @@ namespace SocialSense.Providers.GoogleSites
 
 		private bool HasNextPage(string content)
 		{
-			return content.ToLower().IndexOf("<table id=\"nav\"", StringComparison.Ordinal) > -1;
+			return content.ToLower().IndexOf("id=\"nav\"", StringComparison.Ordinal) > -1;
 		}
 	}
 }

@@ -115,10 +115,8 @@
     <Compile Include="Network\HttpResponse.cs" />
     <Compile Include="Network\HttpReply.cs" />
     <Compile Include="Network\HttpExtensions.cs" />
-    <Compile Include="Providers\GoogleSites\GoogleSiteFlow.cs" />
     <Compile Include="Providers\GoogleSites\GoogleSiteUrlBuilder.cs" />
     <Compile Include="Providers\GoogleSites\GoogleSiteParser.cs" />
-    <Compile Include="Providers\IBasicFlow.cs" />
     <Compile Include="Providers\Locale\BingLocation.cs" />
     <Compile Include="Providers\Locale\FacebookLocation.cs" />
     <Compile Include="Providers\Locale\GoogleLocation.cs" />
@@ -127,6 +125,8 @@
     <Compile Include="Providers\Locale\TwitterLocation.cs" />
     <Compile Include="Providers\Locale\YahooLocation.cs" />
     <Compile Include="Engine.cs" />
+    <Compile Include="Providers\IFinder.cs" />
+    <Compile Include="Providers\GoogleSites\GoogleSiteFinder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

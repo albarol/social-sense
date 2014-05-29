@@ -6,9 +6,9 @@ namespace SocialSense
 {
     public class Engine
     {
-		public static IBasicFlow GoogleSite()
+		public static IFinder GoogleSite()
 		{
-			return new GoogleSiteFlow ();
+			return new GoogleSiteFinder ();
 		}
     }
 }
