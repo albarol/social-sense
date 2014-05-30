@@ -2,7 +2,7 @@ using System;
 using SocialSense.Shared;
 using System.Collections.Generic;
 
-namespace SocialSense
+namespace SocialSense.Providers
 {
 	public interface IFinder
     {

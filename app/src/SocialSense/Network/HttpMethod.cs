@@ -1,6 +1,6 @@
 using System;
 
-namespace SocialSense
+namespace SocialSense.Network
 {
     public enum HttpMethod
     {

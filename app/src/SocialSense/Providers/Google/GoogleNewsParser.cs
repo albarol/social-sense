@@ -6,9 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace SocialSense.Providers.GoogleSites
+namespace SocialSense.Providers.Google
 {
-	public class GoogleSiteParser : HtmlParser
+    internal class GoogleNewsParser : HtmlParser
 	{
 		private bool hasNextPage;
 
@@ -33,11 +33,8 @@ namespace SocialSense.Providers.GoogleSites
 
             foreach (var node in parentNode.ChildNodes)
 			{
-                var hasTable = node.SelectSingleNode ("table") != null || node.SelectSingleNode("div/table") != null;
-                if (!hasTable)
-				{
-                    results.Add(this.GetResultInNode(node));
-				}
+                var contentNode = node.SelectSingleNode ("table/tr[1]/td");
+                results.Add(this.GetResultInNode(contentNode));
 			}
 
 			return new SearchResult
@@ -69,7 +66,7 @@ namespace SocialSense.Providers.GoogleSites
 
 		protected override string ExtractSnippet(HtmlNode node)
 		{
-            var htmlNode = node.SelectSingleNode("div/span");
+            var htmlNode = node.SelectSingleNode("div[2]");
 			return (htmlNode != null) ? htmlNode.InnerText : string.Empty;
 		}
 
@@ -77,7 +74,8 @@ namespace SocialSense.Providers.GoogleSites
 		{
 			try
 			{
-				return DateParser.Parse(node.SelectSingleNode("div[1]").InnerText);
+                var dateText = node.SelectSingleNode("div[1]").InnerText.Split('-')[1].Trim();
+                return DateParser.Parse(dateText);
 			}
 			catch
 			{

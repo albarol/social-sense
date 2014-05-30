@@ -3,17 +3,19 @@ using System.Text;
 using SocialSense.Shared;
 using SocialSense.Providers.Locale;
 
-namespace SocialSense.Providers.GoogleSites
+namespace SocialSense.Providers.Google
 {
-    public class GoogleSiteUrlBuilder
+    internal class GoogleUrlBuilder
     {
 		private readonly ILocation location;
+        private readonly string source;
 
-		private StringBuilder builder;
+        private StringBuilder builder;
 
-		public GoogleSiteUrlBuilder()
+        public GoogleUrlBuilder(string source)
 		{
 			this.location = new GoogleLocation();
+            this.source = source;
 		}
 
 		public string WithQuery(Query query)
@@ -23,7 +25,7 @@ namespace SocialSense.Providers.GoogleSites
 			}
 
 			this.builder = new StringBuilder ("http://www.google.com/search?&safe=images");
-				this.builder.AppendFormat ("&num=100&q={0}", query.Term);
+            this.builder.AppendFormat ("{0}&num=100&q={1}", this.source, query.Term);
 
 			this.AppendLanguage (query.Language);
 			this.AppendCountry (query.Country);

@@ -10,13 +10,13 @@ using SocialSense.Providers;
 namespace SocialSense.Tests.Unit.Providers
 {
 	[TestFixture, Category("Flows")]
-	public class GoogleSiteFinderTestCase
+    public class GoogleNewsFinderTestCase
     {
 		private readonly IFinder finder;
 
-		public GoogleSiteFinderTestCase()
+        public GoogleNewsFinderTestCase()
 		{
-			this.finder = Engine.GoogleSite ();
+            this.finder = Engine.GoogleNews ();
 		}
 
 		[Test]

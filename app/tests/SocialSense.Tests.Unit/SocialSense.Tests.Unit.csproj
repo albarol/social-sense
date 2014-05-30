@@ -111,6 +111,7 @@
     <Compile Include="Urls\YahooUrlBuilderFixture.cs" />
     <Compile Include="Network\RequestManagerTestCase.cs" />
     <Compile Include="Providers\GoogleSiteFinderTestCase.cs" />
+    <Compile Include="Providers\GoogleNewsFinderTestCase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

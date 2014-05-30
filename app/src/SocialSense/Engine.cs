@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
-using SocialSense.Providers.GoogleSites;
+using SocialSense.Providers.Google;
+using SocialSense.Providers;
 
 namespace SocialSense
 {
@@ -10,6 +11,11 @@ namespace SocialSense
 		{
 			return new GoogleSiteFinder ();
 		}
+
+        public static IFinder GoogleNews()
+        {
+            return new GoogleNewsFinder ();
+        }
     }
 }
 
