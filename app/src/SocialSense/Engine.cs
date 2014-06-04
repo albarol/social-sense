@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
-using SocialSense.Providers.Google;
 using SocialSense.Providers;
+using SocialSense.Providers.Google;
+using SocialSense.Providers.Yahoo;
 
 namespace SocialSense
 {
@@ -16,6 +17,11 @@ namespace SocialSense
         {
             return new GoogleNewsFinder ();
         }
+
+		public static IFinder YahooNews()
+		{
+			return new YahooNewsFinder ();
+		}
     }
 }
 

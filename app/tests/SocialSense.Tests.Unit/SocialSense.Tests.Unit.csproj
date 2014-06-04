@@ -112,6 +112,7 @@
     <Compile Include="Network\RequestManagerTestCase.cs" />
     <Compile Include="Providers\GoogleSiteFinderTestCase.cs" />
     <Compile Include="Providers\GoogleNewsFinderTestCase.cs" />
+    <Compile Include="Providers\YahooNewsFinderTestCase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

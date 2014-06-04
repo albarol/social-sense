@@ -131,6 +131,10 @@
     <Compile Include="Providers\Google\GoogleNewsParser.cs" />
     <Compile Include="Providers\Google\GoogleLocation.cs" />
     <Compile Include="Providers\ILocation.cs" />
+    <Compile Include="Providers\Yahoo\YahooUrlBuilder.cs" />
+    <Compile Include="Providers\Yahoo\YahooNewsFinder.cs" />
+    <Compile Include="Providers\Yahoo\YahooNewsParser.cs" />
+    <Compile Include="Providers\Yahoo\YahooLocation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -149,5 +153,6 @@
     <Folder Include="Providers\" />
     <Folder Include="Providers\Locale\" />
     <Folder Include="Providers\Google\" />
+    <Folder Include="Providers\Yahoo\" />
   </ItemGroup>
 </Project>
