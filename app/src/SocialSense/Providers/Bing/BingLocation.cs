@@ -1,9 +1,8 @@
-﻿namespace SocialSense.Providers.Locale
+﻿using System.Collections.Generic;
+using SocialSense.Shared;
+
+namespace SocialSense.Providers.Bing
 {
-    using System.Collections.Generic;
-
-    using SocialSense.Shared;
-
     public class BingLocation : ILocation
     {
         private readonly IDictionary<Country, string> countries = new Dictionary<Country, string>

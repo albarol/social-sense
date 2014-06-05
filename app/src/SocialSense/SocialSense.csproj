@@ -115,7 +115,6 @@
     <Compile Include="Network\HttpResponse.cs" />
     <Compile Include="Network\HttpReply.cs" />
     <Compile Include="Network\HttpExtensions.cs" />
-    <Compile Include="Providers\Locale\BingLocation.cs" />
     <Compile Include="Providers\Locale\FacebookLocation.cs" />
     <Compile Include="Providers\Locale\GooglePlusLocation.cs" />
     <Compile Include="Providers\Locale\TwitterLocation.cs" />
@@ -131,6 +130,10 @@
     <Compile Include="Providers\Google\GoogleNewsParser.cs" />
     <Compile Include="Providers\Google\GoogleLocation.cs" />
     <Compile Include="Providers\ILocation.cs" />
+    <Compile Include="Providers\Bing\BingLocation.cs" />
+    <Compile Include="Providers\Bing\BingFinder.cs" />
+    <Compile Include="Providers\Bing\BingUrlBuilder.cs" />
+    <Compile Include="Providers\Bing\BingParser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -149,5 +152,6 @@
     <Folder Include="Providers\" />
     <Folder Include="Providers\Locale\" />
     <Folder Include="Providers\Google\" />
+    <Folder Include="Providers\Bing\" />
   </ItemGroup>
 </Project>

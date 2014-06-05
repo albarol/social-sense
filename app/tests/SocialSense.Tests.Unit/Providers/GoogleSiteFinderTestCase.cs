@@ -9,7 +9,7 @@ using SocialSense.Providers;
 
 namespace SocialSense.Tests.Unit.Providers
 {
-	[TestFixture, Category("Flows")]
+    [TestFixture, Category("Finder")]
 	public class GoogleSiteFinderTestCase
     {
 		private readonly IFinder finder;
