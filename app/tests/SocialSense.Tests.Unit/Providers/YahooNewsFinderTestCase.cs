@@ -46,7 +46,7 @@ namespace SocialSense.Tests.Unit.Providers
 		public void Search_SearchSomeResultUsingCountry()
 		{
 			var resetEvent = new ManualResetEvent(false);
-			var query = new Query { Term = "country", Country = Country.RussianFederation, MinResults = 20 };
+			var query = new Query { Term = "country", Country = Country.RussianFederation, MinResults = 20, Period = Period.Today };
 			this.finder.Search(query, (results) => {
 				results.Count.Should().BeGreaterOrEqualTo(20);
 				resetEvent.Set ();

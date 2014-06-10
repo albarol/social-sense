@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Text;
 
 using SocialSense.Shared;
@@ -57,21 +57,21 @@ namespace SocialSense.Providers.Yahoo
 
         private void AppendPeriod(Period? period)
         {
-            const string PeriodPattern = "&btf={0}";
+			const string PeriodPattern = "&age={0}";
 
             if (period.HasValue)
             {
                 if (period.Value.Equals(Period.Today))
                 {
-                    this.builder.AppendFormat(PeriodPattern, "d");
+					this.builder.AppendFormat(PeriodPattern, "1d");
                 }
                 else if (period.Value.Equals(Period.Week))
                 {
-                    this.builder.AppendFormat(PeriodPattern, "w");
+					this.builder.AppendFormat(PeriodPattern, "1w");
                 }
                 else if (period.Value.Equals(Period.Month))
                 {
-                    this.builder.AppendFormat(PeriodPattern, "m");
+                    this.builder.AppendFormat(PeriodPattern, "");
                 }
             }
         }
