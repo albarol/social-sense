@@ -293,7 +293,7 @@
             { Country.Haiti, "ht" },
             { Country.HolySee, "va" },
             { Country.Honduras, "hn" },
-            { Country.HongKongSpecialAdministrativeRegionofChina, "hk" },
+            { Country.HongKong, "hk" },
             { Country.Hungary, "hu" },
             { Country.Iceland, "is" },
             { Country.India, "in" },

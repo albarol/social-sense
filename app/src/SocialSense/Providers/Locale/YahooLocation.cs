@@ -243,7 +243,7 @@
             { Country.ChannelIslands, string.Empty },
             { Country.Chile, "cl" },
             { Country.China, "cn" },
-            { Country.HongKongSpecialAdministrativeRegionofChina, "hk" },
+            { Country.HongKong, "hk" },
             { Country.MacaoSpecialAdministrativeRegionofChina, string.Empty },
             { Country.Colombia, "co" },
             { Country.Comoros, string.Empty },

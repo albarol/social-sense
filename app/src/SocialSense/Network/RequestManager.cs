@@ -64,12 +64,23 @@ namespace SocialSense.Network
 		private void ProcessResponse(IAsyncResult responseResult)
 		{
 			HttpReply reply = (HttpReply)responseResult.AsyncState;
-			HttpWebRequest webRequest = reply.Request;
-			HttpWebResponse webResponse = (HttpWebResponse)webRequest.EndGetResponse (responseResult);
-			StreamReader reader = string.IsNullOrEmpty(webResponse.CharacterSet) ?
-			                      new StreamReader(webResponse.GetResponseStream()) :
-			                      new StreamReader(webResponse.GetResponseStream(), Encoding.GetEncoding(webResponse.CharacterSet));
-			reply.Callback (new HttpResponse { Content = reader.ReadToEnd (), StatusCode = webResponse.StatusCode });
+			try 
+			{
+				HttpWebRequest webRequest = reply.Request;
+				HttpWebResponse webResponse = (HttpWebResponse)webRequest.EndGetResponse (responseResult);
+				StreamReader reader = string.IsNullOrEmpty(webResponse.CharacterSet) ?
+				                      new StreamReader(webResponse.GetResponseStream()) :
+				                      new StreamReader(webResponse.GetResponseStream(), Encoding.GetEncoding(webResponse.CharacterSet));
+				reply.Callback (new HttpResponse { Content = reader.ReadToEnd (), StatusCode = webResponse.StatusCode });
+			}
+			catch (WebException e) 
+			{
+				HttpWebResponse webResponse = e.Response as HttpWebResponse;
+				reply.Callback (new HttpResponse { 
+					StatusCode = webResponse != null ? webResponse.StatusCode : HttpStatusCode.InternalServerError, 
+					Content = e.Message 
+				});
+			}
 		}
     }
 }

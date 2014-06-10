@@ -53,7 +53,7 @@
             { Country.ChannelIslands, string.Empty },
             { Country.Chile, "CL" },
             { Country.China, string.Empty },
-            { Country.HongKongSpecialAdministrativeRegionofChina, "HK" },
+            { Country.HongKong, "HK" },
             { Country.MacaoSpecialAdministrativeRegionofChina, string.Empty },
             { Country.Colombia, "CO" },
             { Country.Comoros, string.Empty },

@@ -116,7 +116,7 @@
             { Country.ChannelIslands, string.Empty },
             { Country.Chile, "-51.9984098,-104.3261729,1000km" },
             { Country.China, "cn" },
-            { Country.HongKongSpecialAdministrativeRegionofChina, "hk" },
+            { Country.HongKong, "hk" },
             { Country.MacaoSpecialAdministrativeRegionofChina, "mo" },
             { Country.Colombia, "4.5708680,-74.2973330,1000km" },
             { Country.Comoros, "km" },

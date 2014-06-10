@@ -24,8 +24,8 @@ namespace SocialSense.Providers.Yahoo
                 throw new ArgumentException("term not be null -or- term not be empty");
             }
 
-            this.builder = new StringBuilder("http://news.search.yahoo.com/search?ei=UTF-8&n=100");
-            this.builder.AppendFormat("&p={0}", query.Term);
+			this.builder = new StringBuilder (GetUriByCountry(query.Country));
+			this.builder.AppendFormat("&p={0}", query.Term);
 
             this.AppendCountry(query.Country);
             this.AppendLanguage(query.Language);
@@ -34,6 +34,15 @@ namespace SocialSense.Providers.Yahoo
 
             return this.builder.ToString();
         }
+
+		private String GetUriByCountry(Country? country)
+		{
+			if (!country.HasValue || string.IsNullOrEmpty(this.location.GetCountry(country.Value))) {
+				return "http://news.search.yahoo.com/search?ei=UTF-8&n=100";
+			} else {
+				return string.Format("http://{0}.news.search.yahoo.com/search?ei=UTF-8&n=100", this.location.GetCountry(country.Value));
+			}
+		}
 
         private void AppendLanguage(Language? language)
         {
