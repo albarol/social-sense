@@ -242,7 +242,7 @@ namespace SocialSense.Providers.Google
             { Country.ChannelIslands, string.Empty },
             { Country.Chile, "countryCL" },
             { Country.China, "countryCN" },
-            { Country.HongKongSpecialAdministrativeRegionofChina, "countryHK" },
+            { Country.HongKong, "countryHK" },
             { Country.MacaoSpecialAdministrativeRegionofChina, "countryMO" },
             { Country.Colombia, "countryCO" },
             { Country.Comoros, "countryKM" },

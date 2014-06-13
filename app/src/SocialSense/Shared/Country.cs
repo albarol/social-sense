@@ -1,4 +1,4 @@
-﻿namespace SocialSense.Shared
+namespace SocialSense.Shared
 {
     using System;
 
@@ -50,7 +50,7 @@
         ChannelIslands,
         Chile,
         China,
-        HongKongSpecialAdministrativeRegionofChina,
+        HongKong,
         MacaoSpecialAdministrativeRegionofChina,
         Colombia,
         Comoros,
