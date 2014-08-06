@@ -114,6 +114,7 @@
     <Compile Include="Providers\GoogleNewsFinderTestCase.cs" />
     <Compile Include="Providers\YahooNewsFinderTestCase.cs" />
     <Compile Include="Providers\BingFinderTestCase.cs" />
+    <Compile Include="Providers\GooglePlusFinderTestCase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -126,6 +127,7 @@
     <None Include="Resources\Parsers\twitter-result-v1.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Parsers\BingResult-v1.htm">

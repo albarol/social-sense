@@ -41,6 +41,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Authorization\AuthorizationVia.cs" />
@@ -138,6 +139,13 @@
     <Compile Include="Providers\Yahoo\YahooNewsFinder.cs" />
     <Compile Include="Providers\Yahoo\YahooNewsParser.cs" />
     <Compile Include="Providers\Yahoo\YahooLocation.cs" />
+    <Compile Include="Providers\GooglePlus\GooglePlusFinder.cs" />
+    <Compile Include="Providers\GooglePlus\GooglePlusUrlBuilder.cs" />
+    <Compile Include="Providers\GooglePlus\GooglePlusParser.cs" />
+    <Compile Include="Providers\GooglePlus\GooglePlusLocation.cs" />
+    <Compile Include="Settings\CrawlerSection.cs" />
+    <Compile Include="Settings\BingElement.cs" />
+    <Compile Include="Settings\GooglePlusElement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -158,5 +166,7 @@
     <Folder Include="Providers\Google\" />
     <Folder Include="Providers\Bing\" />
     <Folder Include="Providers\Yahoo\" />
+    <Folder Include="Providers\GooglePlus\" />
+    <Folder Include="Settings\" />
   </ItemGroup>
 </Project>

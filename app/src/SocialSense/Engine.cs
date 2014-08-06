@@ -4,6 +4,7 @@ using SocialSense.Providers;
 using SocialSense.Providers.Google;
 using SocialSense.Providers.Bing;
 using SocialSense.Providers.Yahoo;
+using SocialSense.Providers.GooglePlus;
 
 namespace SocialSense
 {
@@ -27,6 +28,11 @@ namespace SocialSense
 		public static IFinder Bing()
         {
             return new BingFinder ();
+        }
+
+        public static IFinder GooglePlus()
+        {
+            return new GooglePlusFinder ();
         }
     }
 }
