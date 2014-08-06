@@ -23,7 +23,7 @@ namespace SocialSense.Providers.Bing
             }
 
             this.builder = new StringBuilder("https://api.datamarket.azure.com/Bing/Search?format=json");
-            this.builder.AppendFormat("&q={0}", query.Term);
+            this.builder.AppendFormat("&sources=web&query={0}", query.Term);
 
             this.AppendCountry(query.Country);
             this.AppendPage(query.Page);
@@ -41,7 +41,7 @@ namespace SocialSense.Providers.Bing
 
         private void AppendPage(int page)
         {
-            this.builder.AppendFormat("&skip={0}", (page * 50) - 50);
+            //this.builder.AppendFormat("&skip={0}", (page * 50) - 50);
         }
     }
 }

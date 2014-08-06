@@ -18,7 +18,7 @@ namespace SocialSense.Tests.Unit.Providers
         }
 
         [Test]
-        public void Search_VerifyIfGoogleSiteReturnSomeResult()
+        public void Search_VerifyIfBingApiReturnSomeResult()
         {
             var resetEvent = new ManualResetEvent(false);
             this.finder.Search(new Query { Term = "bing", MinResults = 20 }, (results) => {
