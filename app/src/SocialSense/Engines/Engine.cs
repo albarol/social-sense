@@ -24,7 +24,7 @@
         public IList<ResultItem> Search(Query query)
         {
             var results = new List<ResultItem>();
-            SearchResult searchResult;
+            ParserResult searchResult;
             do
             {
                 try

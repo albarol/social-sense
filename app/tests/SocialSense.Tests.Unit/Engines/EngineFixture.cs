@@ -60,7 +60,7 @@ namespace SocialSense.Tests.Unit.Engines
             var query = new Query { Term = "cultura", MaxResults = 20 };
             this.urlBuilder.Setup(u => u.WithQuery(It.IsAny<Query>())).Returns(string.Empty);
             this.spider.Setup(s => s.DownloadContent(It.IsAny<string>())).Returns(string.Empty);
-            this.parser.Setup(p => p.Parse(It.IsAny<string>())).Returns(new SearchResult
+            this.parser.Setup(p => p.Parse(It.IsAny<string>())).Returns(new ParserResult
             {
                 HasNextPage = true, 
                 Items = new List<ResultItem>
@@ -101,7 +101,7 @@ namespace SocialSense.Tests.Unit.Engines
             var query = new Query { Term = "cultura", MaxResults = 20 };
             this.urlBuilder.Setup(u => u.WithQuery(It.IsAny<Query>())).Returns(string.Empty);
             this.spider.Setup(s => s.DownloadContent(It.IsAny<string>())).Returns(string.Empty);
-            this.parser.Setup(p => p.Parse(It.IsAny<string>())).Returns(new SearchResult
+            this.parser.Setup(p => p.Parse(It.IsAny<string>())).Returns(new ParserResult
             {
                 HasNextPage = true,
                 Items = new List<ResultItem>
@@ -141,7 +141,7 @@ namespace SocialSense.Tests.Unit.Engines
             var query = new Query { Term = "cultura", MaxResults = 7 };
             this.urlBuilder.Setup(u => u.WithQuery(It.IsAny<Query>())).Returns(string.Empty);
             this.spider.Setup(s => s.DownloadContent(It.IsAny<string>())).Returns(string.Empty);
-            this.parser.Setup(p => p.Parse(It.IsAny<string>())).Returns(new SearchResult
+            this.parser.Setup(p => p.Parse(It.IsAny<string>())).Returns(new ParserResult
             {
                 HasNextPage = true,
                 Items = new List<ResultItem>
@@ -175,7 +175,7 @@ namespace SocialSense.Tests.Unit.Engines
                 }
             });
             this.spider.Setup(s => s.DownloadContent(It.IsAny<string>())).Returns(string.Empty);
-            this.parser.Setup(p => p.Parse(It.IsAny<string>())).Returns(new SearchResult
+            this.parser.Setup(p => p.Parse(It.IsAny<string>())).Returns(new ParserResult
             {
                 HasNextPage = true,
                 Items = new List<ResultItem>

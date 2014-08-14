@@ -82,7 +82,6 @@
     <Compile Include="Shared\Period.cs" />
     <Compile Include="Shared\Query.cs" />
     <Compile Include="Shared\ResultItem.cs" />
-    <Compile Include="Shared\SearchResult.cs" />
     <Compile Include="Spiders\Behaviors\AuthorizationBehavior.cs" />
     <Compile Include="Spiders\Behaviors\Behavior.cs" />
     <Compile Include="Spiders\Behaviors\CookieBehavior.cs" />
@@ -145,6 +144,7 @@
     <Compile Include="Settings\BingElement.cs" />
     <Compile Include="Settings\GooglePlusElement.cs" />
     <Compile Include="Settings\SocialSenseSection.cs" />
+    <Compile Include="Shared\ParserResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

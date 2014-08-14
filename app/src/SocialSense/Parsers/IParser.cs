@@ -4,6 +4,6 @@
 
     public interface IParser
     {
-        SearchResult Parse(string content);
+        ParserResult Parse(string content);
     }
 }

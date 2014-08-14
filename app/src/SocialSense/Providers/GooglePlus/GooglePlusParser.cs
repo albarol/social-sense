@@ -11,7 +11,7 @@ namespace SocialSense.Providers.GooglePlus
 {
     public class GooglePlusParser : IParser
     {
-        public SearchResult Parse(string content)
+        public ParserResult Parse(string content)
         {
             if (string.IsNullOrEmpty(content))
             {
@@ -36,7 +36,7 @@ namespace SocialSense.Providers.GooglePlus
                 }
             }
 
-            return new SearchResult
+            return new ParserResult
             {
                 Items = results,
                 HasNextPage = !string.IsNullOrEmpty(queryResults.NextPageToken),

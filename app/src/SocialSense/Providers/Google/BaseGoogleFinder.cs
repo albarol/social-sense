@@ -9,7 +9,8 @@ namespace SocialSense.Providers.Google
 {
     public abstract class BaseGoogleFinder : IFinder
     {
-        public abstract void Search (Query query, Action<IList<ResultItem>> callback);
+        public abstract void Search (Query query, Action<IList<ResultItem>> successCallback);
+        public abstract void Search (Query query, Action<IList<ResultItem>> successCallback, Action<HttpResponse> errorCallback);
 
         protected HttpRequest PrepareRequest(string url)
         {

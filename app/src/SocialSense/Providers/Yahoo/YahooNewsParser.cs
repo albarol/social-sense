@@ -24,11 +24,11 @@ namespace SocialSense.Providers.Yahoo
             return (rootNode != null) ? rootNode.SelectSingleNode("ol") : null;
         }
 
-        protected override SearchResult ExtractResultsFromHtml(HtmlNode parentNode)
+        protected override ParserResult ExtractResultsFromHtml(HtmlNode parentNode)
         {
             if (parentNode == null)
             {
-                return new SearchResult { Items = new List<ResultItem>() };
+                return new ParserResult { Items = new List<ResultItem>() };
             }
 
             var results = new List<ResultItem>();
@@ -47,7 +47,7 @@ namespace SocialSense.Providers.Yahoo
                 }
             }
 
-            return new SearchResult { Items = results, HasNextPage = this.hasNextPage };
+            return new ParserResult { Items = results, HasNextPage = this.hasNextPage };
         }
 
         protected override string ExtractUrl(HtmlNode node)

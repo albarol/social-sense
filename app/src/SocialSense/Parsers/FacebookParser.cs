@@ -13,7 +13,7 @@
     {
         private const string AcceptType = "status";
 
-        public SearchResult Parse(string content)
+        public ParserResult Parse(string content)
         {
             if (string.IsNullOrEmpty(content))
             {
@@ -35,7 +35,7 @@
                 };
                 results.Add(current);
             }
-            return new SearchResult { Items = results };
+            return new ParserResult { Items = results };
         }
 
         private FacebookMap GetFacebookResult(string content)

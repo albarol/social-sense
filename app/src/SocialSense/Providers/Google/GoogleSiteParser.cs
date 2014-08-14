@@ -22,11 +22,11 @@ namespace SocialSense.Providers.Google
 			return (rootNode != null) ? rootNode.SelectSingleNode("ol") : null;
 		}
 
-		protected override SearchResult ExtractResultsFromHtml(HtmlNode parentNode)
+		protected override ParserResult ExtractResultsFromHtml(HtmlNode parentNode)
 		{
 			if (parentNode == null)
 			{
-				return new SearchResult();
+				return new ParserResult();
 			}
 
 			IList<ResultItem> results = new List<ResultItem>();
@@ -40,7 +40,7 @@ namespace SocialSense.Providers.Google
 				}
 			}
 
-			return new SearchResult
+			return new ParserResult
 			{
 				Items = results.Where(r => !string.IsNullOrEmpty(r.Snippet)).ToList(),
 				HasNextPage = this.hasNextPage

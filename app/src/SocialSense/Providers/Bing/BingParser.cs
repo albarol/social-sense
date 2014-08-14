@@ -23,11 +23,11 @@ namespace SocialSense.Providers.Bing
             return (rootNode != null) ? rootNode.SelectSingleNode("ul") : null;
         }
 
-        protected override SearchResult ExtractResultsFromHtml(HtmlNode parentNode)
+        protected override ParserResult ExtractResultsFromHtml(HtmlNode parentNode)
         {
             if (parentNode == null)
             {
-                return new SearchResult();
+                return new ParserResult();
             }
 
             var results = new List<ResultItem>();
@@ -51,7 +51,7 @@ namespace SocialSense.Providers.Bing
                     throw new ParserException(e.Message) { Source = e.Source };
                 }
             }
-            return new SearchResult { Items = results, HasNextPage = this.hasNextPage };
+            return new ParserResult { Items = results, HasNextPage = this.hasNextPage };
         }
 
         protected override string ExtractUrl(HtmlNode node)

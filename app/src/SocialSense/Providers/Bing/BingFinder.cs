@@ -23,19 +23,27 @@ namespace SocialSense.Providers.Bing
 
         public void Search (Query query, Action<IList<ResultItem>> callback)
         {
+            Search(query, callback, ((HttpResponse obj) => {}));
+        }
+
+        public void Search (Query query, Action<IList<ResultItem>> successCallback, Action<HttpResponse> errorCallback) 
+        {
             HttpRequest request = new HttpRequest(this.urlBuilder.WithQuery(query));
             this.requester.Execute (request, (response) => {
                 if (response.StatusCode == HttpStatusCode.OK) {
-                    SearchResult result = this.parser.Parse (response.Content);
+                    ParserResult result = this.parser.Parse (response.Content);
                     int totalResults = result.Items.Count;
-                    callback(result.Items);
+                    successCallback(result.Items);
 
                     if (result.HasNextPage && totalResults < query.MinResults)
                     {
                         query.Page++;
                         query.MinResults -= totalResults;
-                        Search(query, callback);
+                        Search(query, successCallback, errorCallback);
                     }
+                }
+                else {
+                    errorCallback(response);
                 }
             });
         }

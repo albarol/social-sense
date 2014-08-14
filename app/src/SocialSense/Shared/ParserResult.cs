@@ -2,9 +2,9 @@
 {
     using System.Collections.Generic;
 
-    public class SearchResult
+    public class ParserResult
     {
-        public SearchResult()
+        public ParserResult()
         {
             this.Items = new List<ResultItem>();
             this.Parameters = new Dictionary<string, string>();

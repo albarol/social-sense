@@ -8,7 +8,7 @@
 
     public abstract class HtmlParser : IParser
     {
-        public SearchResult Parse(string content)
+        public ParserResult Parse(string content)
         {
             if (string.IsNullOrEmpty(content))
             {
@@ -18,7 +18,7 @@
             return this.ExtractResultsFromHtml(parentNode);
         }
 
-        protected abstract SearchResult ExtractResultsFromHtml(HtmlNode parentNode);
+        protected abstract ParserResult ExtractResultsFromHtml(HtmlNode parentNode);
         protected abstract HtmlNode LoadHtmlDocument(string content);
 
         protected virtual string ExtractUrl(HtmlNode node)

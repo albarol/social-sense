@@ -11,7 +11,7 @@
 
     public class TwitterParser : IParser
     {
-        public SearchResult Parse(string content)
+        public ParserResult Parse(string content)
         {
             if (string.IsNullOrEmpty(content))
             {
@@ -33,7 +33,7 @@
                 results.Add(current);
             }
 
-            return new SearchResult { Items = results, HasNextPage = !string.IsNullOrEmpty(queryResults.NextPage) };
+            return new ParserResult { Items = results, HasNextPage = !string.IsNullOrEmpty(queryResults.NextPage) };
         }
     }
 }
