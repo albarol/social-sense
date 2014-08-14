@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+using SocialSense.Settings;
 using SocialSense.Shared;
 using SocialSense.UrlBuilders;
 using SocialSense.UrlBuilders.Parameters;
@@ -11,11 +12,13 @@ namespace SocialSense.Providers.GooglePlus
     public class GooglePlusUrlBuilder : IUrlBuilder
     {
         private readonly ILocation location;
+        private readonly SocialSenseSection config;
         private StringBuilder builder;
 
         public GooglePlusUrlBuilder()
         {
             this.location = new GooglePlusLocation();
+            this.config = SocialSenseSection.GetSection ();
         }
 
         public string WithQuery(Query query)
@@ -26,7 +29,7 @@ namespace SocialSense.Providers.GooglePlus
             }
 
             this.builder = new StringBuilder("https://www.googleapis.com/plus/v1/activities?fields=items(actor%2FdisplayName%2Cobject(attachments(content%2CobjectType)%2Ccontent%2CobjectType)%2Cpublished)%2CnextLink%2Ctitle%2Cupdated&pp=1");
-            this.builder.AppendFormat ("&token={0}", CrawlerSection.GetSection().Bing.Token);
+            this.builder.AppendFormat ("&token={0}", this.config.GooglePlus.Token);
             this.builder.AppendFormat("&orderBy=recent&maxResults=20&query={0}", query.Term);
             this.AppendLanguage(query.Language);
             this.AppendPage(query.Parameters);

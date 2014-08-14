@@ -1,4 +1,4 @@
-﻿namespace SocialSense.Tests.Unit.Engines
+namespace SocialSense.Tests.Unit.Engines
 {
     using System;
     using System.Collections.Generic;

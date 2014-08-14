@@ -1,7 +1,7 @@
 using System;
 using System.Configuration;
 
-namespace SocialSense
+namespace SocialSense.Settings
 {
     public class BingElement : ConfigurationElement
     {
@@ -9,7 +9,6 @@ namespace SocialSense
         public string Token
         {
             get { return Convert.ToString (this ["token"]); }
-            set { this ["token"] = value.ToString (); }
         }
     }
 }
